@@ -25,6 +25,7 @@ for f in files:
 
     X = npXy[:, 1:-1]
     y = npXy[:, -1]
+    X = ((X - np.min(X, 0)) / (np.max(X, 0) - np.min(X, 0) + .0001))
 
     shuffleX, shuffley = shuffle_data(X, y)
 
